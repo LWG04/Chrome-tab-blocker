@@ -71,6 +71,8 @@ class Game:
             self.sprites.draw(self.screen)
             pygame.display.flip()
         pygame.quit()
+        self.keylistener.stop()
+        self.keylistener.join()
 
     def allsprites(self):
         return self.sprites
