@@ -47,8 +47,9 @@ class Game:
         self.control = False
 
     def on_press(self, key):
-        if key == Key.ctrl_l or key == Key.ctrl_r and self.control:
-            self.keyboard.release(key)
+        if key == Key.ctrl_l or key == Key.ctrl_r:
+            if not self.control:
+                self.keyboard.release(key)
         if key == Key.page_up:
             self.control = not self.control
 
